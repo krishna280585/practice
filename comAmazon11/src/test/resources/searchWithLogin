@@ -1,0 +1,35 @@
+Feature: User wants to search a product
+  @smoke
+  Scenario: User wants to search toys and proceed to checkout as registered user
+    Given User should be on Amazon homepage
+    When  User clicks the "Sign in" link
+    And User enters the Email "kk.madhuri111@gmail.com" and password "dhruvin09"
+    And   User clicks on Signin button
+    Then  User successfully login into the Amazon account with text "Hello, krish"
+    When  User wants to search a product "toys"
+    And   User clicks on the search button
+    Then  User can see the list of toys with text "Showing the most relevant results. See all results for"
+    And   User selects for Bathtoys
+    And   User checks the delivery option
+    And   User selects the toys by different Sortby option
+    When  User selects the first toy "Teenage Mutant Ninja Turtles Pre-Cool Half Shell Heroes Leonardo, Donatello and Splinter Bathtub Squirter Figure (Pack of 3)"
+    And   User enters the quantity
+    And   User clicks on add to basket
+    And   User clicks on proceed to checkout
+    Then  User should view the pickup page with text "Select a delivery address"
+    And User navigates to home page
+    And User should signoff
+@smoke1
+  Scenario: User wants to search a product
+    Given User should on Amazon homepage
+    When  User selects the sub category "Electronics & photo"
+    And   User clicks the search button
+    And   User clicks the sub categories "cameras"
+    And   User clicks the DigitalCameras
+    And  User clicks the "Nikon D3300 Digital SLR Camera - Black"
+    And  User clicks on the add to basket
+    And User clicks on Add to basket
+    And  User clicks on the proceed to checkout
+    Then  User should get the login page to checkout
+
+
